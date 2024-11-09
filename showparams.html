@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Parameters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; 
+            background-color: #1d1c1c;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px; 
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px; 
+            text-align: center; 
+            box-shadow: 10px 10px 300px white;
+        }
+
+        h2 {
+            color: #333; 
+        }
+
+        p {
+            color: #f21616; 
+            margin: 10px 0; 
+        }
+    </style>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get('username');
+            const password = params.get('password');
+
+    
+            document.getElementById('displayUsername').textContent = `User  Name: ${username}`;
+            document.getElementById('displayPassword').textContent = `Password: ${password}`;
+        }
+
+        window.onload = getQueryParams; 
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>User Details</h2>
+        <p id="displayUsername"></p>
+        <p id="displayPassword"></p>
+    </div>
+</body>
+</html>
